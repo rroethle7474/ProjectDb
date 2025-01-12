@@ -98,4 +98,7 @@
       <Value>$(SqlCmdVar__1)</Value>
     </SqlCmdVariable>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="azure-pipelines.yml" />
+  </ItemGroup>
 </Project>
