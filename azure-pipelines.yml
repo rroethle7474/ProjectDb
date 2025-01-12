@@ -61,7 +61,7 @@ stages:
           - task: SqlAzureDacpacDeployment@1
             inputs:
               azureSubscription: '$(azureSubscription)'
-              AuthenticationType: 'servicePrincipal'
+              AuthenticationType: 'sqlAuthentication'
               ServerName: '$(serverName)'
               DatabaseName: '$(databaseName)'
               DacpacFile: '$(Pipeline.Workspace)/drop/ProjectDB.dacpac'
