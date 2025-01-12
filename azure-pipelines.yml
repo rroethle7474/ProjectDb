@@ -10,8 +10,8 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
-  azureSubscription: 'JCL-SQL-01v1'  # Replace with your service connection name
-  serverName: 'rpr-2025-jcl-v1.database.windows.net' # Replace with your server name
+  azureSubscription: 'JCL-SQL-01v1'
+  serverName: 'rpr-2025-jcl-v1.database.windows.net'
   databaseName: 'ProjectDB'
 
 stages:
@@ -22,8 +22,6 @@ stages:
       vmImage: 'windows-latest'
     variables:
       solution: '**/*.sqlproj'
-      buildPlatform: 'Any CPU'
-      buildConfiguration: 'Release'
     steps:
     - task: NuGetToolInstaller@1
     
@@ -60,11 +58,11 @@ stages:
           steps:
           - task: SqlAzureDacpacDeployment@1
             inputs:
-              azureSubscription: '$(azureSubscription)'
+              azureSubscription: 'JCL-SQL-01v1'
               AuthenticationType: 'sqlAuthentication'
-              ServerName: '$(serverName)'
-              DatabaseName: '$(databaseName)'
-              DacpacFile: '$(Pipeline.Workspace)/drop/ProjectDB.dacpac'
+              ServerName: 'rpr-2025-jcl-v1.database.windows.net'
+              DatabaseName: 'ProjectDB'
+              DacpacFile: '$(Pipeline.Workspace)/drop/ProjectDb.dacpac'
               SqlUsername: '$(SqlUsername)'
               SqlPassword: '$(SqlPassword)'
               additionalArguments: '/v:SchemaPrefix="$(SchemaPrefix)"'
@@ -76,6 +74,8 @@ stages:
     SchemaPrefix: 'gift_test'
   jobs:
   - deployment: Deploy
+    pool:
+      vmImage: 'windows-latest'
     environment: 'test'
     strategy:
       runOnce:
@@ -83,11 +83,11 @@ stages:
           steps:
           - task: SqlAzureDacpacDeployment@1
             inputs:
-              azureSubscription: '$(azureSubscription)'
-              AuthenticationType: 'servicePrincipal'
-              ServerName: '$(serverName)'
-              DatabaseName: '$(databaseName)'
-              DacpacFile: '$(Pipeline.Workspace)/drop/ProjectDB.dacpac'
+              azureSubscription: 'JCL-SQL-01v1'
+              AuthenticationType: 'sqlAuthentication'
+              ServerName: 'rpr-2025-jcl-v1.database.windows.net'
+              DatabaseName: 'ProjectDB'
+              DacpacFile: '$(Pipeline.Workspace)/drop/ProjectDb.dacpac'
               SqlUsername: '$(SqlUsername)'
               SqlPassword: '$(SqlPassword)'
               additionalArguments: '/v:SchemaPrefix="$(SchemaPrefix)"'
@@ -99,6 +99,8 @@ stages:
     SchemaPrefix: 'gift_prod'
   jobs:
   - deployment: Deploy
+    pool:
+      vmImage: 'windows-latest'
     environment: 'prod'
     strategy:
       runOnce:
@@ -106,11 +108,11 @@ stages:
           steps:
           - task: SqlAzureDacpacDeployment@1
             inputs:
-              azureSubscription: '$(azureSubscription)'
-              AuthenticationType: 'servicePrincipal'
-              ServerName: '$(serverName)'
-              DatabaseName: '$(databaseName)'
-              DacpacFile: '$(Pipeline.Workspace)/drop/ProjectDB.dacpac'
+              azureSubscription: 'JCL-SQL-01v1'
+              AuthenticationType: 'sqlAuthentication'
+              ServerName: 'rpr-2025-jcl-v1.database.windows.net'
+              DatabaseName: 'ProjectDB'
+              DacpacFile: '$(Pipeline.Workspace)/drop/ProjectDb.dacpac'
               SqlUsername: '$(SqlUsername)'
               SqlPassword: '$(SqlPassword)'
               additionalArguments: '/v:SchemaPrefix="$(SchemaPrefix)"'
