@@ -11,7 +11,7 @@ variables:
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
   azureSubscription: 'Your-Azure-Service-Connection'  # Replace with your service connection name
-  serverName: 'your-sql-server.database.windows.net' # Replace with your server name
+  serverName: 'rpr-2025-jcl-v1.database.windows.net' # Replace with your server name
   databaseName: 'ProjectDB'
 
 stages:
