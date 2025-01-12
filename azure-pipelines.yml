@@ -10,7 +10,7 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
-  azureSubscription: 'Your-Azure-Service-Connection'  # Replace with your service connection name
+  azureSubscription: 'JCL-SQL-01v1'  # Replace with your service connection name
   serverName: 'rpr-2025-jcl-v1.database.windows.net' # Replace with your server name
   databaseName: 'ProjectDB'
 
