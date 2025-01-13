@@ -70,7 +70,6 @@
     <Build Include="Tables\WishListItems.sql" />
     <Build Include="Tables\WishListSubmissions.sql" />
     <Build Include="Tables\WishListSubmissionStatus.sql" />
-    <Build Include="PreDeployment.sql" />
   </ItemGroup>
   <ItemGroup>
     <SqlCmdVariable Include="SchemaPrefix">
@@ -80,5 +79,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="azure-pipelines.yml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PreDeploy Include="PreDeployment.sql" />
   </ItemGroup>
 </Project>
