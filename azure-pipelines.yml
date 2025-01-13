@@ -12,7 +12,7 @@ variables:
   buildConfiguration: 'Release'
   azureSubscription: 'JCL-SQL-01v1'
   serverName: 'rpr-2025-jcl-v1.database.windows.net'
-  databaseName: 'ProjectDB'
+  databaseName: 'ProjectDb'
 
 stages:
 - stage: Build
@@ -59,9 +59,9 @@ stages:
           - task: SqlAzureDacpacDeployment@1
             inputs:
               azureSubscription: 'JCL-SQL-01v1'
-              AuthenticationType: 'sqlAuthentication'
+              AuthenticationType: 'server'
               ServerName: 'rpr-2025-jcl-v1.database.windows.net'
-              DatabaseName: 'ProjectDB'
+              DatabaseName: 'ProjectDb'
               DacpacFile: '$(Pipeline.Workspace)/drop/ProjectDb.dacpac'
               SqlUsername: '$(SqlUsername)'
               SqlPassword: '$(SqlPassword)'
@@ -84,9 +84,9 @@ stages:
           - task: SqlAzureDacpacDeployment@1
             inputs:
               azureSubscription: 'JCL-SQL-01v1'
-              AuthenticationType: 'sqlAuthentication'
+              AuthenticationType: 'server'
               ServerName: 'rpr-2025-jcl-v1.database.windows.net'
-              DatabaseName: 'ProjectDB'
+              DatabaseName: 'ProjectDb'
               DacpacFile: '$(Pipeline.Workspace)/drop/ProjectDb.dacpac'
               SqlUsername: '$(SqlUsername)'
               SqlPassword: '$(SqlPassword)'
@@ -109,9 +109,9 @@ stages:
           - task: SqlAzureDacpacDeployment@1
             inputs:
               azureSubscription: 'JCL-SQL-01v1'
-              AuthenticationType: 'sqlAuthentication'
+              AuthenticationType: 'server'
               ServerName: 'rpr-2025-jcl-v1.database.windows.net'
-              DatabaseName: 'ProjectDB'
+              DatabaseName: 'ProjectDb'
               DacpacFile: '$(Pipeline.Workspace)/drop/ProjectDb.dacpac'
               SqlUsername: '$(SqlUsername)'
               SqlPassword: '$(SqlPassword)'
