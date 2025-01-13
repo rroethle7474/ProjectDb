@@ -25,6 +25,7 @@
     <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
     <DefaultFilegroup>PRIMARY</DefaultFilegroup>
     <GenerateCreateScript>True</GenerateCreateScript>
+	<SqlCommandVariablePrefix>SchemaPrefix</SqlCommandVariablePrefix>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -72,15 +73,15 @@
     <Build Include="Tables\WishListSubmissionStatus.sql" />
   </ItemGroup>
   <ItemGroup>
-    <SqlCmdVariable Include="SchemaPrefix">
-      <DefaultValue>giftdb_dev</DefaultValue>
-      <Value>$(SqlCmdVar__1)</Value>
-    </SqlCmdVariable>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="azure-pipelines.yml" />
   </ItemGroup>
   <ItemGroup>
     <PreDeploy Include="PreDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+	<SqlCmdVariable Include="SchemaPrefix">
+		<DefaultValue>gift_dev</DefaultValue>
+		<Value>$(SchemaPrefix)</Value>
+	</SqlCmdVariable>
   </ItemGroup>
 </Project>
