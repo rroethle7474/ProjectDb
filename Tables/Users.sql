@@ -1,4 +1,4 @@
-﻿CREATE TABLE [giftdb_test].[Users] (
+﻿CREATE TABLE [$(SchemaPrefix)].[Users] (
     [UserId]           INT             IDENTITY (1, 1) NOT NULL,
     [Username]         NVARCHAR (50)   NOT NULL,
     [PasswordHash]     NVARCHAR (256)  NOT NULL,

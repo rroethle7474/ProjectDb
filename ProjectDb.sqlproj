@@ -59,39 +59,20 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
-    <Folder Include="giftdb_prod\" />
-    <Folder Include="giftdb_prod\Tables\" />
-    <Folder Include="giftdb_dev\" />
-    <Folder Include="giftdb_dev\Tables\" />
-    <Folder Include="giftdb_test\" />
-    <Folder Include="giftdb_test\Tables\" />
     <Folder Include="Security\" />
+    <Folder Include="Tables" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="giftdb_prod\Tables\Settings.sql" />
-    <Build Include="giftdb_prod\Tables\Users.sql" />
-    <Build Include="giftdb_prod\Tables\WishListItems.sql" />
-    <Build Include="giftdb_prod\Tables\WishListSubmissions.sql" />
-    <Build Include="giftdb_prod\Tables\WishListSubmissionStatus.sql" />
-    <Build Include="giftdb_dev\Tables\HeroContent.sql" />
-    <Build Include="giftdb_dev\Tables\RecommendWishListItems.sql" />
-    <Build Include="giftdb_dev\Tables\Settings.sql" />
-    <Build Include="giftdb_dev\Tables\Users.sql" />
-    <Build Include="giftdb_dev\Tables\WishListItems.sql" />
-    <Build Include="giftdb_dev\Tables\WishListSubmissions.sql" />
-    <Build Include="giftdb_dev\Tables\WishListSubmissionStatus.sql" />
-    <Build Include="giftdb_test\Tables\HeroContent.sql" />
-    <Build Include="giftdb_test\Tables\RecommendWishListItems.sql" />
-    <Build Include="giftdb_test\Tables\Settings.sql" />
-    <Build Include="giftdb_test\Tables\Users.sql" />
-    <Build Include="giftdb_test\Tables\WishListItems.sql" />
-    <Build Include="giftdb_test\Tables\WishListSubmissions.sql" />
-    <Build Include="giftdb_test\Tables\WishListSubmissionStatus.sql" />
-    <Build Include="giftdb_prod\Tables\HeroContent.sql" />
-    <Build Include="giftdb_prod\Tables\RecommendWishListItems.sql" />
     <Build Include="Security\giftdb_dev.sql" />
     <Build Include="Security\giftdb_prod.sql" />
     <Build Include="Security\giftdb_test.sql" />
+    <Build Include="Tables\HeroContent.sql" />
+    <Build Include="Tables\RecommendWishListItems.sql" />
+    <Build Include="Tables\Settings.sql" />
+    <Build Include="Tables\Users.sql" />
+    <Build Include="Tables\WishListItems.sql" />
+    <Build Include="Tables\WishListSubmissions.sql" />
+    <Build Include="Tables\WishListSubmissionStatus.sql" />
   </ItemGroup>
   <ItemGroup>
     <SqlCmdVariable Include="SchemaPrefix">

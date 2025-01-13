@@ -1,4 +1,4 @@
-﻿CREATE TABLE [giftdb_dev].[WishListItems] (
+﻿CREATE TABLE [$(SchemaPrefix)].[WishListItems] (
     [ItemId]        INT             IDENTITY (1, 1) NOT NULL,
     [UserId]        INT             NULL,
     [ItemName]      NVARCHAR (100)  NOT NULL,
