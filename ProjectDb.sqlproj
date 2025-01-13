@@ -63,9 +63,6 @@
     <Folder Include="Tables" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Security\giftdb_dev.sql" />
-    <Build Include="Security\giftdb_prod.sql" />
-    <Build Include="Security\giftdb_test.sql" />
     <Build Include="Tables\HeroContent.sql" />
     <Build Include="Tables\RecommendWishListItems.sql" />
     <Build Include="Tables\Settings.sql" />
@@ -73,6 +70,7 @@
     <Build Include="Tables\WishListItems.sql" />
     <Build Include="Tables\WishListSubmissions.sql" />
     <Build Include="Tables\WishListSubmissionStatus.sql" />
+    <Build Include="PreDeployment.sql" />
   </ItemGroup>
   <ItemGroup>
     <SqlCmdVariable Include="SchemaPrefix">
