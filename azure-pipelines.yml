@@ -11,7 +11,6 @@ variables:
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
   azureSubscription: 'JCL-SQL-01v1'
-  serverName: 'rpr-2025-jcl-v1.database.windows.net'
   databaseName: 'ProjectDb'
 
 stages:
@@ -42,36 +41,9 @@ stages:
         ArtifactName: 'drop'
         publishLocation: 'Container'
 
-- stage: DeployDev
+- stage: DeployTest
   dependsOn: Build
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))
-  variables:
-    SchemaPrefix: 'giftdb_dev'
-  jobs:
-  - deployment: Deploy
-    pool:
-      vmImage: 'windows-latest'
-    environment: 'dev'
-    strategy:
-      runOnce:
-        deploy:
-          steps:
-          - task: SqlAzureDacpacDeployment@1
-            inputs:
-              azureSubscription: 'JCL-SQL-01v1'
-              AuthenticationType: 'server'
-              ServerName: 'rpr-2025-jcl-v1.database.windows.net'
-              DatabaseName: 'ProjectDb'
-              DacpacFile: '$(Pipeline.Workspace)/drop/ProjectDb.dacpac'
-              SqlUsername: '$(SqlUsername)'
-              SqlPassword: '$(SqlPassword)'
-              additionalArguments: '/v:SchemaPrefix="$(SchemaPrefix)"'
-
-- stage: DeployTest
-  dependsOn: DeployDev
-  condition: succeeded()
-  variables:
-    SchemaPrefix: 'giftdb_test'
   jobs:
   - deployment: Deploy
     pool:
@@ -83,20 +55,17 @@ stages:
           steps:
           - task: SqlAzureDacpacDeployment@1
             inputs:
-              azureSubscription: 'JCL-SQL-01v1'
+              azureSubscription: '$(azureSubscription)'
               AuthenticationType: 'server'
-              ServerName: 'rpr-2025-jcl-v1.database.windows.net'
-              DatabaseName: 'ProjectDb'
+              ServerName: 'project-rpr-plan-test-v1.database.windows.net'
+              DatabaseName: '$(databaseName)'
               DacpacFile: '$(Pipeline.Workspace)/drop/ProjectDb.dacpac'
               SqlUsername: '$(SqlUsername)'
               SqlPassword: '$(SqlPassword)'
-              additionalArguments: '/v:SchemaPrefix="$(SchemaPrefix)"'
 
 - stage: DeployProd
   dependsOn: DeployTest
   condition: succeeded()
-  variables:
-    SchemaPrefix: 'giftdb_prod'
   jobs:
   - deployment: Deploy
     pool:
@@ -108,11 +77,10 @@ stages:
           steps:
           - task: SqlAzureDacpacDeployment@1
             inputs:
-              azureSubscription: 'JCL-SQL-01v1'
+              azureSubscription: '$(azureSubscription)'
               AuthenticationType: 'server'
               ServerName: 'rpr-2025-jcl-v1.database.windows.net'
-              DatabaseName: 'ProjectDb'
+              DatabaseName: '$(databaseName)'
               DacpacFile: '$(Pipeline.Workspace)/drop/ProjectDb.dacpac'
               SqlUsername: '$(SqlUsername)'
               SqlPassword: '$(SqlPassword)'
-              additionalArguments: '/v:SchemaPrefix="$(SchemaPrefix)"'
