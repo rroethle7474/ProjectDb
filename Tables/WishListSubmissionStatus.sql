@@ -1,4 +1,4 @@
-﻿CREATE TABLE [$(SchemaPrefix)].[WishListSubmissionStatus] (
+﻿CREATE TABLE [dbo].[WishListSubmissionStatus] (
     [StatusId]          INT            NOT NULL,
     [StatusName]        NVARCHAR (50)  NOT NULL,
     [StatusDescription] NVARCHAR (255) NULL,

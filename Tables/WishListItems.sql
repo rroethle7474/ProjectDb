@@ -1,4 +1,4 @@
-﻿CREATE TABLE [$(SchemaPrefix)].[WishListItems] (
+﻿CREATE TABLE [dbo].[WishListItems] (
     [ItemId]        INT             IDENTITY (1, 1) NOT NULL,
     [UserId]        INT             NULL,
     [ItemName]      NVARCHAR (100)  NOT NULL,
@@ -9,6 +9,6 @@
     [DateAdded]     DATETIME        DEFAULT (getdate()) NULL,
     [LastModified]  DATETIME        DEFAULT (getdate()) NULL,
     PRIMARY KEY CLUSTERED ([ItemId] ASC),
-    FOREIGN KEY ([UserId]) REFERENCES [giftdb_dev].[Users] ([UserId])
+    FOREIGN KEY ([UserId]) REFERENCES [dbo].[Users] ([UserId])
 );
 

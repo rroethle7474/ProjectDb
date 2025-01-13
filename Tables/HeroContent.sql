@@ -1,4 +1,4 @@
-﻿CREATE TABLE [$(SchemaPrefix)].[HeroContent] (
+﻿CREATE TABLE [dbo].[HeroContent] (
     [ContentId]        INT            IDENTITY (1, 1) NOT NULL,
     [Title]            NVARCHAR (100) NOT NULL,
     [Description]      NVARCHAR (500) NULL,

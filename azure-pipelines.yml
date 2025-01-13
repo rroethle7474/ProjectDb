@@ -46,7 +46,7 @@ stages:
   dependsOn: Build
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))
   variables:
-    SchemaPrefix: 'gift_dev'
+    SchemaPrefix: 'giftdb_dev'
   jobs:
   - deployment: Deploy
     pool:
@@ -71,7 +71,7 @@ stages:
   dependsOn: DeployDev
   condition: succeeded()
   variables:
-    SchemaPrefix: 'gift_test'
+    SchemaPrefix: 'giftdb_test'
   jobs:
   - deployment: Deploy
     pool:
@@ -96,7 +96,7 @@ stages:
   dependsOn: DeployTest
   condition: succeeded()
   variables:
-    SchemaPrefix: 'gift_prod'
+    SchemaPrefix: 'giftdb_prod'
   jobs:
   - deployment: Deploy
     pool:

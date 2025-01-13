@@ -1,4 +1,4 @@
-﻿CREATE TABLE [$(SchemaPrefix)].[Users] (
+﻿CREATE TABLE [dbo].[Users] (
     [UserId]           INT             IDENTITY (1, 1) NOT NULL,
     [Username]         NVARCHAR (50)   NOT NULL,
     [PasswordHash]     NVARCHAR (256)  NOT NULL,

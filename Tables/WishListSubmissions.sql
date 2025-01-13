@@ -1,4 +1,4 @@
-﻿CREATE TABLE [$(SchemaPrefix)].[WishListSubmissions] (
+﻿CREATE TABLE [dbo].[WishListSubmissions] (
     [SubmissionId]   INT            IDENTITY (1, 1) NOT NULL,
     [UserId]         INT            NULL,
     [StatusId]       INT            NOT NULL,
@@ -8,7 +8,7 @@
     [Reason]         NVARCHAR (MAX) NULL,
     [ShipmentDate]   DATETIME       NULL,
     PRIMARY KEY CLUSTERED ([SubmissionId] ASC),
-    FOREIGN KEY ([StatusId]) REFERENCES [giftdb_dev].[WishListSubmissionStatus] ([StatusId]),
-    FOREIGN KEY ([UserId]) REFERENCES [giftdb_dev].[Users] ([UserId])
+    FOREIGN KEY ([StatusId]) REFERENCES [dbo].[WishListSubmissionStatus] ([StatusId]),
+    FOREIGN KEY ([UserId]) REFERENCES [dbo].[Users] ([UserId])
 );
 
