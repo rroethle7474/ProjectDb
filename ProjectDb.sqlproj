@@ -61,6 +61,8 @@
     <Folder Include="Properties" />
     <Folder Include="Security\" />
     <Folder Include="Tables" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\HeroContent.sql" />
@@ -70,6 +72,29 @@
     <Build Include="Tables\WishListItems.sql" />
     <Build Include="Tables\WishListSubmissions.sql" />
     <Build Include="Tables\WishListSubmissionStatus.sql" />
+    <Build Include="dbo\Tables\WeeklySearchResultReports.sql" />
+    <Build Include="dbo\Tables\WebTrace.sql" />
+    <Build Include="dbo\Tables\TopSearchResults.sql" />
+    <Build Include="dbo\Tables\Topics.sql" />
+    <Build Include="dbo\Tables\TokenTemplates.sql" />
+    <Build Include="dbo\Tables\SubTopics.sql" />
+    <Build Include="dbo\Tables\SearchResults.sql" />
+    <Build Include="dbo\Tables\SearchResultReports.sql" />
+    <Build Include="dbo\Tables\Quotes.sql" />
+    <Build Include="dbo\Tables\Notes.sql" />
+    <Build Include="dbo\Tables\LearnMoreDetails.sql" />
+    <Build Include="dbo\Tables\HistorySearchResults.sql" />
+    <Build Include="dbo\Tables\EmailTemplates.sql" />
+    <Build Include="dbo\Tables\DefaultTopics.sql" />
+    <Build Include="dbo\Tables\ContentTypes.sql" />
+    <Build Include="dbo\Tables\Channels.sql" />
+    <Build Include="dbo\Tables\AspNetUserTokens.sql" />
+    <Build Include="dbo\Tables\AspNetUsers.sql" />
+    <Build Include="dbo\Tables\AspNetUserRoles.sql" />
+    <Build Include="dbo\Tables\AspNetUserLogins.sql" />
+    <Build Include="dbo\Tables\AspNetUserClaims.sql" />
+    <Build Include="dbo\Tables\AspNetRoles.sql" />
+    <Build Include="dbo\Tables\AspNetRoleClaims.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="azure-pipelines.yml" />
