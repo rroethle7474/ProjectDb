@@ -16,6 +16,7 @@
     [ParentPhone2]     VARCHAR (50)    NULL,
     [GreetingMessage]  NVARCHAR (MAX)  NULL,
     [Birthday]         DATETIME        NULL,
+    [IsGuestUser]      BIT             DEFAULT ((0)) NOT NULL,
     PRIMARY KEY CLUSTERED ([UserId] ASC),
     UNIQUE NONCLUSTERED ([Username] ASC)
 );
