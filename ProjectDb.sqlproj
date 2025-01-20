@@ -63,6 +63,7 @@
     <Folder Include="Tables" />
     <Folder Include="dbo\" />
     <Folder Include="dbo\Tables\" />
+    <Folder Include="Scripts" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\HeroContent.sql" />
@@ -98,5 +99,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="azure-pipelines.yml" />
+    <None Include="Scripts\InitialMigration.sql" />
   </ItemGroup>
 </Project>
