@@ -96,9 +96,10 @@
     <Build Include="dbo\Tables\AspNetUserClaims.sql" />
     <Build Include="dbo\Tables\AspNetRoles.sql" />
     <Build Include="dbo\Tables\AspNetRoleClaims.sql" />
+    <None Include="Scripts\SMD-InitialMigration.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="azure-pipelines.yml" />
-    <None Include="Scripts\InitialMigration.sql" />
+    <None Include="Scripts\GiftDb-InitialMigration.sql" />
   </ItemGroup>
 </Project>
