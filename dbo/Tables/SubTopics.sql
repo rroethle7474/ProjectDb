@@ -6,6 +6,7 @@
     [TopicId]   INT             NOT NULL,
     [CreatedOn] DATETIME2 (7)   NOT NULL,
     [UpdatedOn] DATETIME2 (7)   NOT NULL,
+    [ExcludeFromTwitter] BIT NOT NULL DEFAULT 0, 
     CONSTRAINT [PK_SubTopics] PRIMARY KEY CLUSTERED ([Id] ASC),
     CONSTRAINT [FK_SubTopics_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [dbo].[AspNetUsers] ([Id]),
     CONSTRAINT [FK_SubTopics_Topics_TopicId] FOREIGN KEY ([TopicId]) REFERENCES [dbo].[Topics] ([Id])
